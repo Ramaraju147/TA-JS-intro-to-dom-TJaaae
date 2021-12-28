@@ -6,13 +6,13 @@ default value to be "text" and return the input element inside label. (create it
 */
 
 // Your code goes here
-function createInputElm(text, type = "text") {
-  let label = document.createElement("label");
-  let input = document.createElement("input");
-  input.setAttribute("type", type);
-  let innerText = document.createTextNode(text);
-  label.append(innerText, input);
-  return label;
+function createInputElm(text,type="text"){
+let label = document.createElement("label");
+let input = document.createElement("Input");
+label.innerText = text;
+input.setAttribute("type",type);
+label.append(input);
+return label;
 }
 
 // TEST
@@ -22,14 +22,15 @@ createInputElm("Your age", "number"); //<label>Your age: <input type="number"></
 // 2. Do the same thing as above using string literal like `<h1>Hello</h1>`
 
 // Your code goes here
-function createInputElm(text, type = "text") {
+function createInputElm(text,type="text"){
   let label = document.createElement("label");
-  let input = document.createElement("input");
-  input.setAttribute("type", type);
-  label.innerHTML = "<h1>Hello</h1>";
+  let input = document.createElement("Input");
+  label.innerHTML = "<h1>text</h1>";
+  input.setAttribute("type",type);
   label.append(input);
   return label;
-}
+  } 
+
 
 // TEST
 createInputElm("Your name"); //<label>Your name: <input type="text"></label>
@@ -38,14 +39,14 @@ createInputElm("Your age", "number"); //<label>Your age: <input type="number"></
 // 3. Create a function named `createList` that accept and array of data like ['Mango', 'Apple', 'Banana'] and returns
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
 // Your code goes here
-function createList(arr) {
+function createList(arr){
   let ul = document.createElement("ul");
-  arr.forEach((r) => {
+  arr.forEach( a => {
     let li = document.createElement("li");
-    li.innerText = r;
-    ul.append(li);
-  });
-  return ul;
+    li.innerText=a;
+    ul.append(li)}
+    )
+    return ul;
 }
 
 // TEST
@@ -65,22 +66,20 @@ createList(["Afghanistan", "Antarctica", "Congo", "Estonia"]);
 */
 
 // Your code goes here
-function createTodoList(arr) {
+function createTodoList(arr){
   let ul = document.createElement("ul");
-  arr.forEach((r) => {
+  arr.forEach(obj => {
     let li = document.createElement("li");
     let p = document.createElement("p");
-    p.innerText = r.name;
-    let input = document.createElement("input");
-    input.setAttribute("type", "checkbox");
-    if (r.isDone) {
-      input.checked = true;
-    }
-    let span = document.createElement("span");
-    span.innerText = "X";
-    li.append(p, input, span);
-    ul.append(li);
-  });
+    let input = document.createElement("input")
+    let span = document.createElement("span")
+    p.innerText = obj.name;
+    input.setAttribute("type","checkbox")
+    input.checked = obj.isDone
+    span.innerText = "X"
+    li.append(p,input,span)
+    ul.append(li)
+  })
   return ul;
 }
 
