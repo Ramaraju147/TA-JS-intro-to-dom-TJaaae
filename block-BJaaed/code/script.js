@@ -117,23 +117,26 @@ let books = {
   ],
 };
 
-function bookly(arr) {
-  let html = `<h1>Bookly</h1>
-    <ul>
-    ${arr.books
-      .map(
-        (element) =>
-          `<li>
-        <img src=${element.image} />
-        <h2>${element.title}</h2>
-        <p>${element.author}</p>
-        <button>Buy Now</button>
-      </li>`
-      )
-      .join("")}
-    </ul>
-    `;
-  return html;
+
+function bookly(){
+  let body = document.body;
+  let h1 = document.createElement("h1");
+  h1.innerText = "Bookly";
+  let ul = document.createElement("ul");
+  books.books.forEach(book => {
+    let li = document.createElement("li");
+    let img = document.createElement("img");
+    let h2 = document.createElement("h2");
+    let p = document.createElement("p");
+    let btn = document.createElement("button");
+    img.src = book.image;
+    h2.innerText = book.title;
+    p.innerText = book.description;
+    btn.innerText = "Buy Now";
+    li.append(img,h2,p,btn);
+    ul.append(li)
+  })
+  body.append(h1,ul);
 }
 
-document.body.innerHTML = bookly(books);
+bookly();
