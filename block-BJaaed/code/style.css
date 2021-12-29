@@ -128,57 +128,45 @@ table {
   border-spacing: 0;
 }
 
-body {
-  background-color: rgb(253, 245, 232);
+body{
+  background-color: bisque;
 }
 
-h1 {
-  background-color: rgb(55, 126, 128);
+h1{
+  background: rgb(3,167,166);
   text-align: center;
-  color: rgb(249, 255, 93);
-  font-size: 3rem;
-  padding: 1rem 0rem;
+  padding: 1.5rem;
+  font-size: 2rem;
 }
 
-ul {
+h2{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0rem;
+}
+
+ul{
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+li{
+  flex: 0 1 30%;
   text-align: center;
-}
-
-ul::after {
-  content: "";
-  flex: 0 0 32%;
-}
-
-ul img {
-  height: 450px;
-  width: 300px;
-  padding: 1.5rem 0rem;
-  background-size: cover;
-}
-
-ul h2 {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-ul p {
-  padding: 1rem 0rem;
-}
-
-ul button {
-  padding: 0.8rem 1rem;
-  background-color: rgb(55, 126, 128);
-  color: white;
-  border: none;
-}
-
-li {
-  width: 28%;
   background-color: white;
-  margin: 2rem 2rem;
-  padding: 2rem 2rem;
-  box-sizing: border-box;
+  padding: 1rem;
+  margin-top: 1rem
+}
+
+img{
+  width: 10rem;
+}
+
+button{
+  height: 2rem;
+  width: 5rem;
+  margin-top: 1rem;
+  color: white;
+  background-color: rgb(3,167,166);
 }
